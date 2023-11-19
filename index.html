@@ -1,155 +1,355 @@
-<!DOCTYPE html>
-<html lang="en">
+/* General styling */
+body {
+    /* Flex container settings for centering content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0; /* Remove default margin */
+    /* Background gradient with cover size - 2-toned gray gradient */
+    background: linear-gradient(to bottom, #555555, #999999);
+    background-size: cover;
+    min-height: 100vh; /* Minimum height of the viewport */
+    overflow: auto; /* Enable scrolling if content overflows */
+    position: relative;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore exclusive content from Summer. Follow on Twitch, Instagram, Twitter, TikTok, OnlyFans, and Telegram.">
-    <link rel="stylesheet" href="css/style.css">
+.signature{
+    transform: rotate(20deg);
+    margin-top: -140px;
+    margin-bottom: 50px;
+    width: 25%;
+}
+/* Container for social buttons */
+.button-container {
+    /* Flex container for arranging buttons vertically */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spacing between buttons */
+    align-items: center;
+    margin-top: 20px;
+}
 
-    <script defer src="js/script.js"></script>
+/* Remove underline from links within .button-container */
+.button-container a {
+    text-decoration: none;
+}
 
-    <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Summer ☀️ - Exclusive Content">
-    <meta property="og:description" content="Explore exclusive content from Summer. Follow on Twitch, Instagram, Twitter, TikTok, OnlyFans, and Telegram.">
-    <meta property="og:url" content="https://summerloyal.com">
-    <meta name="twitter:card" content="summary_large_image">
+/* Social button style */
+.social-button {
+    /* Button appearance and styling */
+    background-color: #555555;
+    color: #999999;
+    width: 200px;
+    height: 40px;
+    border: 2px solid #555555;
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 15px;
+    margin-right: 15px;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Smooth transition effects */
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
+}
 
-    <!-- SEO Keywords -->
-    <meta name="keywords" content="Summer, exclusive content, Twitch, Instagram, Twitter, TikTok, OnlyFans, Telegram">
+/* Hover effect for social buttons */
+.social-button:hover {
+    background-color: transparent; /* Transparent background on hover */
+    color: #999999;
+}
 
-    <!-- Author and Publisher -->
-    <meta name="Rafael" content="Rafael">
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+.whatsapp-button {
+    margin-top: 10px;
+}
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    
-    
-   <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GV83VX9N6E"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+/* Menu icon style */
+.menu-icon-container {
+    /* Menu icon container styling */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    border-radius: 50%;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
+}
 
-    gtag('config', 'G-GV83VX9N6E');
-    </script>
+.menu-icon-container:hover {
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.3); /* Increase box shadow on hover */
+}
 
-    <title>summer &#x2600;
-</title>
-</head>
+/* Styling for menu icon */
+.menu-icon {
+    /* Menu icon styling */
+    width: 40px;
+    height: 40px;
+    background-color: rgba(188, 188, 188, 0.2);
+    border: 2px solid rgba(188, 188, 188, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-<body>   
-    <!-- Circular image container -->
-    <div class="circle-image">
-        <img src="assets/img/" alt="Circular Image">
-    </div>
+/* Icon inside menu icon */
+.menu-icon::after {
+    content: "\1F517"; /* Placeholder icon content */
+    font-size: 24px;
+    color: #999999; /* Match with the background */
+}
 
-    <!-- Heading -->
-    <h1>Summer</h1>
-    <h2>Summer is hot, right? &#x2600; </h2>
+/* Share menu style */
+.share-menu {
+    /* Share menu container styling */
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    background-color: #555555;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    max-height: 300px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px;
+    display: none; /* Initially hide the share menu */
+    flex-direction: column;
+    z-index: 2; /* Stack above other elements */
+    text-align: center;
+}
 
-    <!-- Main share buttons outside of the menu -->
-    <button class="social-button" id="tiktokButton">
-        <div class="new-button">
-            <img src="assets/img/tiktok.svg" alt="TikTok Logo" width="24" height="24">
-        </div>
-        <div class="new-button">
-            TikTok
-        </div>
-        <!-- Dropdown menu -->
-        <div class="dropdown-content" id="tiktokDropdown">
-            <span onclick="navigateToProfile()">Português</span>
-            <div class="dropdown-divider"></div>
-            <span onclick="navigateToVideos()">English</span>
-        </div>
-    </button>
-    
-        <button class="social-button whatsapp-button" onclick="window.open('https://api.whatsapp.com/send?phone=+34613572778&text=Hey%2C%20how%20are%20you%2C%20I%20want%20to%20login%20in%20your%20page', '_blank');">
-            <div class="new-button">
-                <img src="assets/img/whatsapp.svg" alt="Whatsapp Logo" width="24" height="24">
-            </div>
-            <div class="new-button">
-                Whatsapp
-            </div>
-        </button>
-    </div>
+/* Share link style */
+.share-menu button {
+    /* Share link styling */
+    background-color: #555555;
+    color: #999999;
+    border: 2px solid #555555;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: "Lato", sans-serif;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s; /* Smooth transition on hover */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
+}
 
-   <!-- Menu icon -->
-<div class="menu-icon-container">
-    <div class="menu-icon" onclick="toggleMenu(event)"></div>
-</div>
+/* Center text vertically within the Facebook button */
+.share-menu button:nth-child(4) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
- <!-- Share options menu -->
-<div class="share-menu" id="shareMenu">
-    <button onclick="shareOnSocialMedia('twitter', 'https://summerloyal.com')">Twitter</button>
-    <button onclick="shareOnSocialMedia('whatsapp', 'https://summerloyal.com')">WhatsApp</button>
-    <button onclick="shareOnSocialMedia('facebook', 'https://summerloyal.com')">Facebook</button>
-    <button onclick="copyLink()"><i><b>Copy Link</b></i></button>
-</div>
+/* Style for the last share link */
+.share-menu button:last-child {
+    border-bottom: none; /* Remove bottom border for the last button */
+    margin-bottom: 0;
+    padding-bottom: 1;
+}
 
-    <!-- Pop-up content -->
-    <div id="popup" class="popup">
-        <p>This is additional information in the pop-up. You can customize this content.</p>
-        <button onclick="closePopup()">Close</button>
-    </div>
+/* Hover effect for share links */
+.share-menu button:hover {
+    background-color: transparent; /* Transparent background on hover */
+    color: #999999;
+}
 
-    <!-- Cookie Preference link -->
-    <div class="cookie-preference-link" id="cookie-preference-link">
-        <a href="#" onclick="showCookiePopup()">Cookie  <br> Policies</a>
-    </div>
+/* Display the share menu when the menu icon is active */
+.menu-icon.active + .share-menu {
+    display: block;
+}
 
-     <!-- Overlay div -->
-     <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+.new-button {
+    padding: 2px;
+}
 
-     <!-- Pop-up for Cookie Policies -->
-<div class="popup-cookie" id="popupCookie">
-    <h2>Cookie Policies</h2>
-    <p>Cookie Policy
+/* Responsive design */
+@media (max-width: 80px) {
+    /* Media query for screens with width 80px or less */
+    h1 {
+        font-size: 24px;
+        margin-top: 10px;
+    }
 
-        Last Updated: October, 13, 2023
-        
-        Welcome to Social Apps Company! This Cookie Policy explains how we use cookies and similar tracking technologies on our website. By using our website, you consent to the use of cookies as described in this policy.
-        
-        1. What are Cookies?
-        Cookies are small text files that are stored on your device when you visit a website. They are widely used to make websites work more efficiently and to provide information to website owners.
-        
-        2. Types of Cookies We Use
-        Essential Cookies: These cookies are necessary for the website to function properly. They enable basic functions such as page navigation and access to secure areas of the website.
-        
-        Analytical/Performance Cookies: These cookies allow us to recognize and count the number of visitors to our website and see how visitors move around. This helps us improve the way our website works.
-        
-        Functionality Cookies: These cookies are used to recognize you when you return to our website. They enable us to personalize our content for you and remember your preferences.
-        
-        Targeting Cookies: These cookies record your visit to our website, the pages you have visited, and the links you have followed. We may use this information to make our website more relevant to your interests.
-        
-        3. How We Use Cookies
-        We use cookies for the following purposes:
-        
-        To analyze user behavior and improve our website.
-        To personalize your experience on our website.
-        To provide targeted advertising based on your interests.
-        4. Third-Party Cookies
-        We may also use third-party cookies provided by trusted partners. The use of these cookies is subject to the privacy policies of the third parties.
-        
-        5. Controlling Cookies
-        You can control and/or delete cookies as you wish. You can delete all cookies that are already on your device and you can set most browsers to prevent them from being placed. If you do this, however, you may have to manually adjust some preferences every time you visit a site, and some services and functionalities may not work.
-        
-        6. Changes to this Cookie Policy
-        We may update this Cookie Policy from time to time. Any changes will be posted on this page with an updated revision date.
-        
-        7. Contact Us
-        If you have any questions or concerns about our use of cookies, please contact us at hello@socialappscompany.com.
-        
-        Thank you for visiting Social Apps Company!</p>
-    <!-- Add more content and details about cookie policies if needed -->
-</div>
+    .circle-image {
+        width: 80px;
+        height: 80px;
+    }
 
+    .menu-icon-container {
+        top: 10px;
+        right: 10px;
+    }
+}
 
-</body>
+/* Share section style */
+.share-section {
+    text-align: center;
+}
 
-</html>
+/* Share button style */
+.share-button {
+    /* Share button styling */
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Hover effect for share button */
+.share-button:hover {
+    background-color: #0056b3;
+}
+
+/* Pop-up styles */
+.popup {
+    /* Pop-up container styling */
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #FF9966;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* High stacking order */
+}
+
+.popup p {
+    margin: 0;
+}
+
+/* Cookie Preference link styles */
+.cookie-preference-link {
+    /* Cookie preference link styling */
+    bottom: 10px;
+    align-content: center;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    text-decoration: underline;
+    cursor: pointer;
+    z-index: 1; /* Stacking order above other elements */
+    font-size: 10px;
+    background-color: transparent;
+}
+
+/* Hover effect */
+.cookie-preference-link:hover {
+    color: navy; /* Navy on hover */
+}
+
+/* Active (click) effect */
+.cookie-preference-link:active {
+    color: yellow; /* Yellow on click */
+}
+
+/* Visited link style */
+.cookie-preference-link:visited {
+    color: grey; /* Grey for visited links */
+}
+
+/* Set the anchor tag styles */
+.cookie-preference-link a {
+    color: inherit; /* Inherit the color from the parent div */
+    text-decoration: none; /* Remove the underline */
+    display: block; /* Make the anchor tag a block element to fill the parent div */
+    padding: 10px;
+}
+
+.overlay {
+    /* Overlay styling for background shading */
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Transparent black */
+    z-index: 1; /* Higher z-index than menu */
+    backdrop-filter: blur(1px); /* Adjust the blur amount as needed */
+}
+
+/* Styles for Cookie Policies Pop-up */
+.popup-cookie {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 2px solid #FF9966;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* High stacking order */
+    max-width: 400px; /* Adjust the maximum width */
+    width: 90%; /* Adjust the width as needed */
+    max-height: 80vh; /* Maximum height of 80% of the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    text-align: center;
+}
+
+.popup-content {
+    padding: 20px;
+}
+
+.popup-cookie h2 {
+    margin-bottom: 10px;
+}
+
+.popup-cookie p {
+    margin-bottom: 20px;
+}
+
+.popup-cookie button:hover {
+    background-color: #0056b3;
+}
+/* Dropdown menu styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #555555;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%; /* Position the dropdown below the social button */
+    left: 10%; /* Align with the left edge of the button */
+    border-radius: 20px;
+}
+
+/* Remove the hover effect */
+.social-button:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown menu item styling */
+.dropdown-content span {
+    color: #999999;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* Align content vertically in the middle */
+    cursor: pointer;
+}
+
+/* Adjust the hover effect to match the button */
+.dropdown-content span:hover {
+    background-color: transparent; /* Transparent background on hover */
+    color: #999999;
+}
