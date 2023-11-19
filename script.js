@@ -5,24 +5,17 @@ window.onload = function () {
     menuIcon = document.querySelector(".menu-icon");
 }
 
-// Function to toggle the visibility of the TikTok dropdown menu and move the WhatsApp button
+// Function to toggle the visibility of the TikTok dropdown menu
 function toggleTikTokDropdown() {
-    const dropdown = document.getElementById('tiktokDropdown');
-    const whatsappButton = document.querySelector('.whatsapp-button');
+    const dropdown = document.querySelector('.dropdown-content');
     const tiktokButton = document.getElementById('tiktokButton');
 
-    // Close the dropdown if it is already open and the TikTok button is selected
     if (dropdown.style.display === 'block' && tiktokButton.classList.contains('selected')) {
         dropdown.style.display = 'none';
         tiktokButton.classList.remove('selected');
-        whatsappButton.style.marginTop = '10px'; // Reset the margin
     } else {
-        // Toggle the visibility of the TikTok dropdown menu
         dropdown.style.display = 'block';
         tiktokButton.classList.add('selected');
-        
-        // Move the WhatsApp button down if the dropdown is visible
-        whatsappButton.style.marginTop = '100px'; // Adjust the margin as needed
     }
 }
 
@@ -33,18 +26,9 @@ function navigateToProfile(lang) {
         'english': 'https://www.tiktok.com/@sapienz_en?lang=pt-BR',
     };
 
-    window.location.href = tiktokProfileUrls[lang] || tiktokProfileUrls['english'];
+    window.open(tiktokProfileUrls[lang] || tiktokProfileUrls['english'], '_blank');
 }
 
-// Function to navigate to TikTok videos
-function navigateToVideos(lang) {
-    const tiktokVideosUrls = {
-        'portuguese': 'https://www.tiktok.com/@sapienz_pt',
-        'english': 'https://www.tiktok.com/@sapienz_en?lang=pt-BR',
-    };
-
-    window.location.href = tiktokVideosUrls[lang] || tiktokVideosUrls['english'];
-}
 
 function toggleMenu(event) {
     const shareMenu = document.querySelector(".share-menu");
@@ -143,4 +127,13 @@ document.body.addEventListener('click', function () {
         tiktokButton.classList.remove('selected');
         whatsappButton.style.marginTop = '10px'; // Reset the margin
     }
+});
+
+// Add click event listeners for TikTok language buttons
+document.getElementById('tiktokPortugueseButton').addEventListener('click', function () {
+    navigateToProfile('portuguese');
+});
+
+document.getElementById('tiktokEnglishButton').addEventListener('click', function () {
+    navigateToProfile('english');
 });
