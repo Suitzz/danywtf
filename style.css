@@ -14,6 +14,12 @@ body {
     position: relative;
 }
 
+.signature {
+    width: 25%;
+    transform: rotate(20deg);
+    margin-top: -10%;
+}
+
 /* Container for social buttons */
 .button-container {
     /* Flex container for arranging buttons vertically */
@@ -61,6 +67,14 @@ body {
 .whatsapp-button {
     margin-top: 10px;
 }
+
+/* Add this to your CSS file */
+.social-button.selected {
+    /* Styles for the selected state */
+    background-color: #555555; /* Adjust the background color as needed */
+    color: #999999; /* Adjust the text color as needed */
+}
+
 
 /* Heading style */
 h1 {
@@ -205,7 +219,7 @@ h2 {
 }
 
 .new-button {
-    padding: 2px;
+    margin-left: 15px;
 }
 
 /* Responsive design */
@@ -355,36 +369,50 @@ h2 {
 .popup-cookie button:hover {
     background-color: #0056b3;
 }
+
+.flagPT{
+    margin-left: -20px;
+    padding-right: 10px;
+}
+
+.flagUS{
+    margin-left: -38px;
+    padding-right: 10px;
+}
 /* Dropdown menu styling */
+.dropdownPT {
+    position: relative;
+    display: inline-block;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #555555;
+    color: #999999;
+    width: 200px;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    top: 100%; /* Position the dropdown below the social button */
-    left: 10%; /* Align with the left edge of the button */
     border-radius: 20px;
+    margin-top: 8px;
 }
 
-/* Remove the hover effect */
-.social-button:hover .dropdown-content {
+/* Display the dropdown content when hovering over the dropdown container */
+.dropdownPT:hover .dropdown-content {
     display: block;
 }
 
 /* Dropdown menu item styling */
-.dropdown-content span {
+.dropdownPT span {
     color: #999999;
     padding: 12px 16px;
     text-decoration: none;
-    display: flex;
-    align-items: center; /* Align content vertically in the middle */
     cursor: pointer;
+    display: block;
 }
 
-/* Adjust the hover effect to match the button */
-.dropdown-content span:hover {
-    background-color: transparent; /* Transparent background on hover */
+.dropdownPT span:hover {
+    background-color: transparent;
     color: #999999;
 }
