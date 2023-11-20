@@ -1,11 +1,13 @@
 let shareMenuVisible = false;
 let menuIcon;
+let whatsappButton;
 
 window.onload = function () {
     menuIcon = document.querySelector(".menu-icon");
+    whatsappButton = document.querySelector(".whatsapp-button");
 }
 
-// Function to toggle the visibility of the TikTok dropdown menu
+// Function to toggle the visibility of the TikTok dropdown menu and move the WhatsApp button
 function toggleTikTokDropdown() {
     const dropdown = document.querySelector('.dropdown-content');
     const tiktokButton = document.getElementById('tiktokButton');
@@ -13,7 +15,11 @@ function toggleTikTokDropdown() {
     if (dropdown.style.display === 'block' && tiktokButton.classList.contains('selected')) {
         dropdown.style.display = 'none';
         tiktokButton.classList.remove('selected');
+        // Reset the margin of the WhatsApp button
+        whatsappButton.style.marginTop = '10px';
     } else {
+        // Move the WhatsApp button down by 90px
+        whatsappButton.style.marginTop = '115px';
         dropdown.style.display = 'block';
         tiktokButton.classList.add('selected');
     }
@@ -28,7 +34,6 @@ function navigateToProfile(lang) {
 
     window.open(tiktokProfileUrls[lang] || tiktokProfileUrls['english'], '_blank');
 }
-
 
 function toggleMenu(event) {
     const shareMenu = document.querySelector(".share-menu");
@@ -116,17 +121,19 @@ document.getElementById('tiktokButton').addEventListener('click', function (even
     toggleTikTokDropdown();
 });
 
-// Close the dropdown when clicking outside of it
+// Close the dropdown and reset the WhatsApp button when clicking outside of it
 document.body.addEventListener('click', function () {
     const dropdown = document.getElementById('tiktokDropdown');
     const tiktokButton = document.getElementById('tiktokButton');
-    const whatsappButton = document.querySelector('.whatsapp-button');
-
+    
     if (dropdown.style.display === 'block' && tiktokButton.classList.contains('selected')) {
         dropdown.style.display = 'none';
         tiktokButton.classList.remove('selected');
-        whatsappButton.style.marginTop = '10px'; // Reset the margin
+        // Reset the margin of the WhatsApp button
+        whatsappButton.style.marginTop = '10px';
     }
+
+    closeMenu();
 });
 
 // Add click event listeners for TikTok language buttons
