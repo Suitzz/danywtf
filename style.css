@@ -373,12 +373,15 @@ h2 {
 .flagPT{
     margin-left: -20px;
     padding-right: 10px;
+    margin-top: 5px; /* Adjusted margin for centering */
 }
 
 .flagUS{
     margin-left: -38px;
     padding-right: 10px;
+    margin-top: -5px; /* Adjusted margin for centering */
 }
+
 /* Dropdown menu styling */
 .dropdownPT {
     position: relative;
@@ -395,7 +398,8 @@ h2 {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 20px;
-    margin-top: 8px;
+    margin-top: 30px;
+    margin-left: -78px;
 }
 
 /* Display the dropdown content when hovering over the dropdown container */
@@ -403,16 +407,47 @@ h2 {
     display: block;
 }
 
-/* Dropdown menu item styling */
-.dropdownPT span {
-    color: #999999;
+/* Dropdown item container */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 12px 16px;
-    text-decoration: none;
     cursor: pointer;
-    display: block;
 }
 
-.dropdownPT span:hover {
-    background-color: transparent;
-    color: #999999;
+/* Style for the separator line in the dropdown menu */
+.dropdown-separator {
+    height: 3px;
+    background-color: #999999;
+    margin: 8px 0;
+    width: 100%;
 }
+
+/* Flag styling */
+.flagPT,
+.flagUS {
+    margin-right: 10px;
+}
+
+/* Centering text */
+.dropdown-item span {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the text in the dropdown menu */
+.dropdown-item.portuguese span {
+    color: #999999; /* Adjust the color for Portuguese text */
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.dropdown-item.english span {
+    color: #999999; /* Adjust the color for English text */
+    font-weight: bold;
+    margin-bottom: 5px ;
+}
+
+
+
