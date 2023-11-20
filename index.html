@@ -56,16 +56,24 @@
                 TikTok
             </div>
           <!-- Dropdown menu -->
+<!-- Dropdown menu -->
 <div class="dropdownPT" id="tiktokDropdown">
     <div class="dropdown-content">
-        <span id="tiktokPortugueseButton" onclick="navigateToProfile('portuguese')">
-            <img class="flagPT" src="https://flagcdn.com/24x18/pt.png" alt="Portugal">Português
-        </span>
-        <span id="tiktokEnglishButton" onclick="navigateToProfile('english')">
-            <img class="flagUS" src="https://flagcdn.com/24x18/us.png" alt="USA">English
-        </span>
+        <div class="dropdown-item portuguese" onclick="navigateToProfile('portuguese')">
+            <img class="flagPT" src="https://flagcdn.com/24x18/pt.png" alt="Portugal">
+            <span>Português</span>
+        </div>
+        <!-- Separator line -->
+        <div class="dropdown-separator"></div>
+        <div class="dropdown-item english" onclick="navigateToProfile('english')">
+            <img class="flagUS" src="https://flagcdn.com/24x18/us.png" alt="USA">
+            <span>English</span>
+        </div>
     </div>
 </div>
+
+
+
     
         <button class="social-button whatsapp-button" onclick="window.open('https://api.whatsapp.com/send?phone=+34613572778&text=Hey%2C%20how%20are%20you%2C%20I%20want%20to%20login%20in%20your%20page', '_blank');">
             <div class="svgLogo">
