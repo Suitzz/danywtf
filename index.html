@@ -1,122 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel </title>
     <link rel="stylesheet" href="css/style.css">
-
-    <script defer src="js/script.js"></script>
-
-    <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Dany - Exclusive Content">
-    <meta property="og:description" content="Explore exclusive content from Summer. Follow on Twitch, Instagram, Twitter, TikTok, OnlyFans, and Telegram.">
-    <meta property="og:url" content="https://daniel.wtf">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- SEO Keywords -->
-    <meta name="keywords" content="Daniel, tiktok, whatsapp">
-
-    <!-- Author and Publisher -->
-    <meta name="Rafael" content="Rafael">
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GV83VX9N6E"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-GV83VX9N6E');
-    </script>
-
-    <title>Daniel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 </head>
-
-<body>   
-    <img class="signature" src="assets/img/signature.png">
-
-
-
-    <!-- Main share buttons outside of the menu -->
-    <div class="button-container">
-        <button class="social-button" id="tiktokButton">
-            <div class="svgLogo">
-                <img src="assets/img/tiktok.svg" alt="TikTok Logo" width="24" height="24">
-            </div>
-            <div class="new-button">
-                TikTok
-            </div>
-          <!-- Dropdown menu -->
-<!-- Dropdown menu -->
-<div class="dropdownPT" id="tiktokDropdown">
-    <div class="dropdown-content">
-        <div class="dropdown-item portuguese" onclick="navigateToProfile('portuguese')">
-            <img class="flagPT" src="https://flagcdn.com/24x18/pt.png" alt="Portugal">
-            <span>Português</span>
+<body>
+    <div class="container" id="blur">
+        <div class="containerImage">
+            <img class="image" src="assets/img/signature.png" alt="Dany">
         </div>
-        <!-- Separator line -->
-        <div class="dropdown-separator"></div>
-        <div class="dropdown-item english" onclick="navigateToProfile('english')">
-            <img class="flagUS" src="https://flagcdn.com/24x18/us.png" alt="USA">
-            <span>English</span>
-        </div>
-    </div>
-</div>
-
-
-
     
-        <button class="social-button whatsapp-button" onclick="window.open('https://wa.me/+34613572778', '_blank');">
-            <div class="svgLogo">
-                <img src="assets/img/whatsapp.svg" alt="Whatsapp Logo" width="24" height="24">
+        <div class="buttons">
+            <a class="button tiktok" id="tiktokButton" href="#">
+                <img src="assets/img/Tiktok.svg" alt="TikTok Logo">TikTok</a>
+            <a class="button youtube" id="youtubeButton" href="#">
+                <img src="assets/img/youtube.svg" alt="YouTube Logo">Youtube</a>
+            <a class="button twitter" id="twitterButton" href="#">
+                <img src="assets/img/twitter.svg" alt="Twitter Logo">Twitter</a>
+            <a class="button insta" id="instaButton" href="#">
+                <img src="assets/img/Instagram.svg" alt="Instagram Logo">Instagram</a>
+            <a class="button twitch" id="twitchButton" href="#">
+                <img src="assets/img/twitch.svg" alt="Twitch Logo">Twitch</a>
+            <a class="button only" id="onlyButton" href="#">
+                <img src="assets/img/onlyfans.svg" alt="OnlyFans Logo">Onlyfans</a>
+            <a class="button patreon" id="patreonButton" href="#">
+                <img src="assets/img/patreon.svg" alt="Patreon Logo">Patreon</a>
+        </div>
+
+        <div id="tiktokModal" class="popupModal">
+            <div class="popupContent">
+                <span class="closeButton" onclick="toggle()">&times;</span>
+        
+                <div class="portugalContainer">
+                    <a href="https://www.tiktok.com/@sapienz_tuga?lang=pt-BR">
+                        <div class="imageContainer">
+                            <img src="assets/img/portugal.png" alt="portugal" class="portugal">
+                            <div class="label">Português</div>
+                        </div>
+                    </a>
+                </div>
+        
+                <div class="globeContainer">
+                    <a href="https://www.tiktok.com/@sapienz_global?lang=pt-BR">
+                        <div class="imageContainer">
+                            <img src="assets/img/globe.svg" alt="globe" class="globe">
+                            <div class="label">Global</div>
+                        </div>
+                    </a>
+                </div>
+        
             </div>
-            <div class="new-button">
-                Whatsapp
+        </div>
+        
+        <div id="youtubeModal" class="popupModal">
+            <div class="popupContent">
+                <span class="closeButton1" onclick="toggle()">&times;</span>
+                
+                <div class="portugalContainer">
+                    <a href="https://www.youtube.com/@Sapienz_Tuga">
+                        <div class="imageContainer">
+                            <img src="assets/img/portugal.png" alt="portugal" class="portugal">
+                            <div class="label">Português</div>
+                        </div>
+                    </a>
+                </div>
+        
+                <div class="globeContainer">
+                    <a href="https://www.youtube.com/@Sapienz_Global">
+                        <div class="imageContainer">
+                            <img src="assets/img/globe.svg" alt="globe" class="globe">
+                            <div class="label">Global</div>
+                        </div>
+                    </a>
+                </div>
+        
             </div>
-        </button>
+        </div>
+
+        <div id="twitterModal" class="popupModal">
+            <div class="popupContent">
+                <span class="closeButton2" onclick="toggle()">&times;</span>
+                
+                <div class="portugalContainer">
+                    <a href="https://twitter.com/Sapienz_Tuga">
+                        <div class="imageContainer">
+                            <img src="assets/img/portugal.png" alt="portugal" class="portugal">
+                            <div class="label">Português</div>
+                        </div>
+                    </a>
+                </div>
+        
+                <div class="globeContainer">
+                    <a href="https://twitter.com/Sapienz_Global">
+                        <div class="imageContainer">
+                            <img src="assets/img/globe.svg" alt="globe" class="globe">
+                            <div class="label">Global</div>
+                        </div>
+                    </a>
+                </div>
+        
+            </div>
+        </div>
+    
+        <div id="instaModal" class="popupModal">
+            <div class="popupContent">
+                <span class="closeButton3" onclick="toggle()">&times;</span>
+                
+                <div class="portugalContainer">
+                    <a href="https://www.instagram.com/sapienz_tuga/">
+                        <div class="imageContainer">
+                            <img src="assets/img/portugal.png" alt="portugal" class="portugal">
+                            <div class="label">Português</div>
+                        </div>
+                    </a>
+                </div>
+        
+                <div class="globeContainer">
+                    <a href="https://www.instagram.com/sapienz_global/">
+                        <div class="imageContainer">
+                            <img src="assets/img/globe.svg" alt="globe" class="globe">
+                            <div class="label">Global</div>
+                        </div>
+                    </a>
+                </div>
+        
+            </div>
+        </div>
+    
+
+        <div id="twitchModal" class="popupModal">
+            <div class="popupContent">
+                <span class="closeButton4" onclick="toggle()">&times;</span>
+                
+                <div class="portugalContainer">
+                    <a href="https://www.twitch.tv/sapienz_games">
+                        <div class="imageContainer">
+                            <img src="assets/img/portugal.png" alt="portugal" class="portugal">
+                            <div class="label">Português</div>
+                        </div>
+                    </a>
+                </div>
+        
+                <div class="globeContainer">
+                    <a href="https://www.twitch.tv/sapienz_games">
+                        <div class="imageContainer">
+                            <img src="assets/img/globe.svg" alt="globe" class="globe">
+                            <div class="label">Global</div>
+                        </div>
+                    </a>
+                </div>
+        
+            </div>
+        </div>
+
+        <div id="onlyModal" class="popupModal">
+            <div class="popupContent">
+                <span class="closeButton5" onclick="toggle()">&times;</span>
+                
+               <div class="portugalContainer">
+                    <a href="https://onlyfans.com/sapienz">
+                        <div class="imageContainer">
+                            <img src="assets/img/portugal.png" alt="portugal" class="portugal">
+                            <div class="label">Português</div>
+                        </div>
+                    </a>
+                </div>
+        
+                <div class="globeContainer">
+                    <a href="https://onlyfans.com/sapienz">
+                        <div class="imageContainer">
+                            <img src="assets/img/globe.svg" alt="globe" class="globe">
+                            <div class="label">Global</div>
+                        </div>
+                    </a>
+                </div>
+        
+            </div>
+        </div>
+
+        <div id="patreonModal" class="popupModal">
+            <div class="popupContent">
+                <span class="closeButton6" onclick="toggle()">&times;</span>
+                
+                <div class="portugalContainer">
+                    <a href="https://www.patreon.com/Sapienz_Tuga/creators">
+                        <div class="imageContainer">
+                            <img src="assets/img/portugal.png" alt="portugal" class="portugal">
+                            <div class="label">Português</div>
+                        </div>
+                    </a>
+                </div>
+        
+                <div class="globeContainer">
+                    <a href="https://www.patreon.com/Sapienz_Global/creators">
+                        <div class="imageContainer">
+                            <img src="assets/img/globe.svg" alt="globe" class="globe">
+                            <div class="label">Global</div>
+                        </div>
+                    </a>
+                </div>
+        
+            </div>
+        </div>
     </div>
-
-   <!-- Menu icon -->
-    <div class="menu-icon-container">
-        <div class="menu-icon" onclick="toggleMenu(event)"></div>
-    </div>
-
-    <!-- Share options menu -->
-    <div class="share-menu" id="shareMenu">
-        <button onclick="shareOnSocialMedia('twitter', 'https://dany.wtf')">Twitter</button>
-        <button onclick="shareOnSocialMedia('whatsapp', 'https://dany.wtf')">WhatsApp</button>
-        <button onclick="shareOnSocialMedia('facebook', 'https://dany.wtf')">Facebook</button>
-        <button onclick="copyLink()"><i><b>Copy Link</b></i></button>
-    </div>
-
-    <!-- Pop-up content -->
-    <div id="popup" class="popup">
-        <p>This is additional information in the pop-up. You can customize this content.</p>
-        <button onclick="closePopup()">Close</button>
-    </div>
-
-    <!-- Cookie Preference link -->
-    <div class="cookie-preference-link" id="cookie-preference-link">
-        <a href="#" onclick="showCookiePopup()">Cookie  <br> Policies</a>
-    </div>
-
-    <!-- Overlay div -->
-    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
-
-    <!-- Pop-up for Cookie Policies -->
-    <div class="popup-cookie" id="popupCookie">
-        <h2>Cookie Policies</h2>
-        <!-- Add your cookie policy content here -->
-    </div>
-
+    
 </body>
-
+<script src="js/script.js"></script>
 </html>
