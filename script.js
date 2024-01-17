@@ -1,146 +1,111 @@
-let shareMenuVisible = false;
-let menuIcon;
-let whatsappButton;
+document.addEventListener('DOMContentLoaded', function() {
+    var tiktokButton = document.getElementById('tiktokButton');
+    var youtubeButton = document.getElementById('youtubeButton');
+    var twitterButton = document.getElementById('twitterButton');
+    var instaButton = document.getElementById('instaButton');
+    var twitchButton = document.getElementById('twitchButton');
+    var onlyButton = document.getElementById('onlyButton');
+    var patreonButton = document.getElementById('patreonButton');
+    var tiktokModal = document.getElementById('tiktokModal');
+    var youtubeModal = document.getElementById('youtubeModal');
+    var twitterModal = document.getElementById('twitterModal');
+    var instaModal = document.getElementById('instaModal');
+    var twitchModal = document.getElementById('twitchModal');
+    var onlyModal = document.getElementById('onlyModal');
+    var patreonModal = document.getElementById('patreonModal');
+    var closeButton = document.querySelector('.closeButton');
+    var closeButton1 = document.querySelector('.closeButton1');
+    var closeButton2 = document.querySelector('.closeButton2');
+    var closeButton3 = document.querySelector('.closeButton3');
+    var closeButton4 = document.querySelector('.closeButton4');
+    var closeButton5 = document.querySelector('.closeButton5');
+    var closeButton6 = document.querySelector('.closeButton6');
 
-window.onload = function () {
-    menuIcon = document.querySelector(".menu-icon");
-    whatsappButton = document.querySelector(".whatsapp-button");
-}
-
-// Function to toggle the visibility of the TikTok dropdown menu and move the WhatsApp button
-function toggleTikTokDropdown() {
-    const dropdown = document.querySelector('.dropdown-content');
-    const tiktokButton = document.getElementById('tiktokButton');
-
-    if (dropdown.style.display === 'block' && tiktokButton.classList.contains('selected')) {
-        dropdown.style.display = 'none';
-        tiktokButton.classList.remove('selected');
-        // Reset the margin of the WhatsApp button
-        whatsappButton.style.marginTop = '10px';
-    } else {
-        // Move the WhatsApp button down by 90px
-        whatsappButton.style.marginTop = '115px';
-        dropdown.style.display = 'block';
-        tiktokButton.classList.add('selected');
-    }
-}
-
-// Function to navigate to the TikTok profile
-function navigateToProfile(lang) {
-    const tiktokProfileUrls = {
-        'portuguese': 'https://www.tiktok.com/@sapienz_pt',
-        'english': 'https://www.tiktok.com/@sapienz_en?lang=pt-BR',
-    };
-
-    window.open(tiktokProfileUrls[lang] || tiktokProfileUrls['english'], '_blank');
-}
-
-function toggleMenu(event) {
-    const shareMenu = document.querySelector(".share-menu");
-    const overlay = document.getElementById("overlay");
-
-    if (menuIcon && !shareMenu.contains(event.target) && !menuIcon.contains(event.target) && shareMenuVisible) {
-        shareMenu.style.display = "none";
-        overlay.style.display = "none";
-        shareMenuVisible = false;
-    } else {
-        shareMenu.style.display = shareMenuVisible ? "none" : "flex";
-        overlay.style.display = shareMenuVisible ? "none" : "block";
-        shareMenuVisible = !shareMenuVisible;
-    }
-}
-
-function closeMenu() {
-    const shareMenu = document.querySelector(".share-menu");
-    const overlay = document.getElementById("overlay");
-
-    shareMenu.style.display = "none";
-    overlay.style.display = "none";
-    shareMenuVisible = false;
-}
-
-function closePopup() {
-    const popup = document.getElementById("popup");
-    popup.style.display = "none";
-}
-
-function shareOnSocialMedia(platform) {
-    const url = 'https://summerloyal.com'; // Replace with your website URL
-    let shareUrl;
-
-    switch (platform) {
-        case 'twitter':
-            shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`;
-            break;
-        case 'whatsapp':
-            shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url)}`;
-            break;
-        case 'facebook':
-            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-            break;
-        default:
-            shareUrl = url;
+    // Updated openModal function with console log
+    function openModal(modal) {
+        console.log('Opening modal:', modal.id); // Debugging line
+        var blur = document.getElementById('blur');
+        blur.classList.add('active');
+        modal.style.display = 'flex';
     }
 
-    window.open(shareUrl, '_blank');
-}
+    function closeModal(modal) {
+        console.log('Closing modal:', modal.id); // Debugging line
+        var blur = document.getElementById('blur');
+        blur.classList.remove('active');
+        modal.style.display = 'none';
+    }
 
-function copyLink() {
-    const url = 'https://summerloyal.com'; // Replace with your website URL
-    navigator.clipboard.writeText(url)
-        .then(() => {
-            alert('Link copied to clipboard!');
-        })
-        .catch((err) => {
-            console.error('Unable to copy link', err);
-        });
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    // ...
-
-    // Show Cookie Policies pop-up
-    document.getElementById('cookie-preference-link').addEventListener('click', function () {
-        document.querySelector('.popup-cookie').style.display = 'block';
-        document.querySelector('.overlay').style.display = 'block';
+    // Event listeners for opening modals
+    tiktokButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        openModal(tiktokModal);
     });
 
-    // Close Cookie Policies pop-up when clicking outside the box
-    document.querySelector('.overlay').addEventListener('click', closeCookiePopup);
-});
+    youtubeButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        openModal(youtubeModal);
+    });
 
-function closeCookiePopup() {
-    document.querySelector('.popup-cookie').style.display = 'none';
-    document.querySelector('.overlay').style.display = 'none';
-}
+    twitterButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        openModal(twitterModal);
+    });
 
-// Add click event listener to the TikTok button
-document.getElementById('tiktokButton').addEventListener('click', function (event) {
-    // Prevent the click event from propagating to the body and closing the dropdown immediately
-    event.stopPropagation();
-    toggleTikTokDropdown();
-});
+    instaButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        openModal(instaModal);
+    });
 
-// Close the dropdown and reset the WhatsApp button when clicking outside of it
-document.body.addEventListener('click', function () {
-    const dropdown = document.getElementById('tiktokDropdown');
-    const tiktokButton = document.getElementById('tiktokButton');
-    
-    if (dropdown.style.display === 'block' && tiktokButton.classList.contains('selected')) {
-        dropdown.style.display = 'none';
-        tiktokButton.classList.remove('selected');
-        // Reset the margin of the WhatsApp button
-        whatsappButton.style.marginTop = '10px';
-    }
+    twitchButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        openModal(twitchModal);
+    });
 
-    closeMenu();
-});
+    onlyButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        openModal(onlyModal);
+    });
 
-// Add click event listeners for TikTok language buttons
-document.getElementById('tiktokPortugueseButton').addEventListener('click', function () {
-    navigateToProfile('portuguese');
-});
+    patreonButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        openModal(patreonModal);
+    });
 
-document.getElementById('tiktokEnglishButton').addEventListener('click', function () {
-    navigateToProfile('english');
+    // Event listeners for closing modals
+    closeButton.addEventListener('click', function() {
+        closeModal(tiktokModal);
+    });
+
+    closeButton1.addEventListener('click', function() {
+        closeModal(youtubeModal);
+    });
+
+    closeButton2.addEventListener('click', function() {
+        closeModal(twitterModal);
+    });
+
+    closeButton3.addEventListener('click', function() {
+        closeModal(instaModal);
+    });
+
+    closeButton4.addEventListener('click', function() {
+        closeModal(twitchModal);
+    });
+
+    closeButton5.addEventListener('click', function() {
+        closeModal(onlyModal);
+    });
+
+    closeButton6.addEventListener('click', function() {
+        closeModal(patreonModal);
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+        var modals = [tiktokModal, youtubeModal, twitterModal, instaModal, twitchModal, onlyModal, patreonModal];
+        if (event.target.className === 'popupModal') {
+            modals.forEach(modal => closeModal(modal));
+        }
+    });
 });
